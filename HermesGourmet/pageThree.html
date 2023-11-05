@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/page.css">
+    <script type="text/javascript" src="js/register.js"></script>
+</head>
+<body>
+
+    <fieldset>
+        Nom : <span id=span1></span> /
+        Prénom : <span id=span2></span> /
+        Email : <span id=span3></span> /  
+        Rôle : <span id="span4"></span>
+    </fieldset>
+<center>
+    <div class="box">
+        <form name="form1">
+            <div class="dropdown">
+                <legend>Question 5</legend>
+
+                <div class="dropdown">
+                    <label class="quest">A quelle frequence achetez-vous en ligne ?</label>
+                    </br><br><br>
+                    <SELECT NAME="Liste" id="select" >
+                        <option value="5">Très souvent</option>
+                        <option value="4">Souvent</option>
+                        <option value="3">Peu souvent</option>
+                    </select>
+                </div>
+            </div>
+            <div class="stars">
+                <legend>Question 6</legend>
+                <label>Comment avez vous trouvez l'interface du sîte ?</label>
+                <br>
+                <rating>
+                    <input type="radio" name="qust"  value="1" aria-label="1 star" required/>
+                    <input type="radio" name="qust"  value="2" aria-label="2 stars"/>
+                    <input type="radio" name="qust"  value="3" aria-label="3 stars"/>
+                    <input type="radio" name="qust"  value="4" aria-label="4 stars"/>
+                    <input type="radio" name="qust"  value="5" aria-label="5 stars"/>
+                </rating>
+            </div>
+        </form>
+    </div>
+</center>
+
+        <div class="div_input_fo">
+        <input type="button" name="valid_inscr"  class="input_form" value="Suivant" onclick="quest5(form1),quest6(form1),psuivant(),moy(),moyenne()" />
+        </div>
+
+        <div class="div_input_suiv">
+            <input type="button" name="valid_inscr"  class="input_form" value="Précédent" onclick="precedent(),retour()" />
+        </div>
+    <script type="text/javascript">
+        function psuivant(){
+            document.location.href="pageFour.html"
+        }
+        function precedent(){
+            document.location.href="pageTwo.html"
+        }
+
+        var prenom = document.getElementById('span1').innerHTML = getCookie('nom');
+        var nom = document.getElementById('span2').innerHTML = getCookie('prenom');
+        var email = document.getElementById('span3').innerHTML = getCookie('email');
+        var role = document.getElementById('span4').innerHTML = getCookie('role');
+
+        function quest5(form1) {
+            var oSelect = document.getElementById("select").value;
+            document.cookie="note5=" + oSelect;
+        }
+
+        function quest6(form1) {
+            if (form1.qust[0].checked)
+            {
+                document.cookie= "note6=" + parseInt(1);
+            }else if (form1.qust[1].checked)
+            {
+                document.cookie= "note6=" +parseFloat(2);
+            } else if (form1.qust[2].checked){
+                document.cookie= "note6=" +parseFloat(3);
+            } else if (form1.qust[3].checked){
+                document.cookie= "note6=" +parseFloat(4);
+            } else if (form1.qust[4].checked){
+                document.cookie= "note6=" +parseFloat(5);
+            }
+
+        }
+        function moy(){
+            var somme = parseInt (getCookie('note5'));
+            var somme = somme + parseInt (getCookie('note6'));
+            var somme = somme + parseInt (getCookie('somme'));
+            document.cookie ="somme=" +somme;
+        }
+
+        function retour(){
+             var _note5 = getCookie('note3');
+             var _note6 = getCookie('note4');
+             var somme = getCookie('somme');
+
+            somme = parseInt(_note5) + parseInt(_note6);
+            document.cookie ="somme=" +somme;
+         }
+
+    </script>
+
+</body>
+</html>

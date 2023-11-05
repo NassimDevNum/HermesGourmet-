@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/page.css">
+    <script type="text/javascript" src="js/register.js"></script>
+</head>
+<body>
+	<fieldset>
+        Nom : <span id=span1></span> /
+        Prénom : <span id=span2></span> /
+        Votre moyenne est de : <span id=span5></span> /10
+    </fieldset>
+	<center>
+        <h1 style="color: #3A3B36">Page réservée au commentaire</h1>
+        <div id="form-main">
+            <div id="form-div">
+                <form class="form" id="form1">
+                    <p class="text">
+                        <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </center>
+	<script type="text/javascript">
+
+		var nom = document.getElementById('span1').innerHTML = getCookie('nom');
+        var prenom = document.getElementById('span2').innerHTML = getCookie('prenom');
+		var moyenne = document.getElementById('span5').innerHTML = getCookie('moyenne');
+
+        function finishEnquete(){
+            document.location.href="finenquete.php"
+        }
+
+	</script>
+    <center>
+        <div>
+            <button id="button-blue" class="btn btn-lg btn btn-warning btn-block" type="button" value="Envoyer" onclick="finishEnquete()">Envoyer</button>
+        </div>
+    </center>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+  background-color: #EBE6EA; /* Couleur d'arrière-plan */
+}
+
+.wrapper {
+  background-color: #a79b74; /* Couleur de fond du formulaire */
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.title {
+  background-color: #3a3b36; /* Couleur de fond du titre */
+  color: #ebe6ea; /* Couleur du texte du titre */
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.form {
+  padding: 20px;
+}
+
+.inputfield {
+  margin-bottom: 15px;
+}
+
+label {
+  color: #3a3b36; /* Couleur du texte des étiquettes */
+}
+
+.input {
+  background-color: #ebe6ea; /* Couleur de fond des champs d'entrée */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.custom_select select {
+  background-color: #ebe6ea; /* Couleur de fond du sélecteur personnalisé */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  background-color: #731a5c; /* Couleur de fond du bouton Valider */
+  color: #ebe6ea; /* Couleur du texte du bouton Valider */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #3a3b36; /* Couleur de fond du bouton Valider au survol */
+}

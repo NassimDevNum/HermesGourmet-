@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/register.css">
+  <script type="text/javascript" src="js/register.js"></script>
+  <script>
+    function validation(){
+      var prenom = document.getElementById("prenom");
+      var nom = document.getElementById("nom");
+      var age = document.getElementById("age");
+      var mail = document.getElementById("email");
+      var tel = document.getElementById("tel");
+      var postal = document.getElementById("postal");
+
+
+      if(nom.validity.valueMissing || prenom.validity.valueMissing || age.validity.valueMissing || mail.validity.valueMissing || tel.validity.valueMissing || postal.validity.valueMissing)
+      {
+        alert ("veuillez remplir tout les champs")
+      }else{
+        document.location.href="pageOne.html"
+      }
+    }
+  </script>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="title">
+    Identification
+  </div>
+  <form method="post" action="" >
+    <div class="form">
+      <div class="inputfield">
+        <label>Prénom</label>
+        <input id="prenom" onblur="traiterPrenom()" type="text" class="input" required="">
+      </div>
+      <div class="inputfield">
+        <label>Nom</label>
+        <input id="nom" onblur="traiterNom()" type="text" class="input" required="">
+      </div>
+      <div class="inputfield">
+        <label>Age</label>
+        <input id="age" onblur="traiterAge()" type="number" min="18" max="100" class="input" required="">
+      </div>
+      <div class="inputfield">
+        <label>Adresse Mail</label>
+        <input id="email" onblur="verifEmail()" type="text" class="input" required="">
+      </div>
+      <div class="inputfield">
+        <label>Numéro de téléphone</label>
+        <input id="tel" placeholder="Votre numero" pattern="06[0-9]{8}" type="text" class="input" required="">
+      </div>
+      <div class="inputfield">
+        <label>Type</label>
+        <div class="custom_select">
+          <select id="roletype">
+            <option value="seller">Seller</option>
+            <option value="client">Client</option>
+            <option value="both">Both</option>
+          </select>
+        </div>
+      </div>
+      <div class="inputfield">
+        <label>Postal Code</label>
+        <input id="postal" type="text" class="input">
+      </div>
+      <div class="inputfield">
+        <input id="buttonValidate" type="button" value="Valider" onclick="validation(), saveCookies()"  class="btn">
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

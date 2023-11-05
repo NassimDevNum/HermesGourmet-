@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/page.css">
+    <script type="text/javascript" src="js/register.js"></script>
+</head>
+<body>
+
+
+  <fieldset>
+      Nom : <span id=span1></span> /
+      Prénom : <span id=span2></span> /
+      Email : <span id=span3></span> /
+      Rôle : <span id="span4"></span>
+    </fieldset>
+<center>
+    <div class="box">
+        <form name="form1">
+            <fieldset>
+                <div class="dropdown">
+                    <legend>Question 1</legend>
+                    <label class="quest"> Achetez vous souvent de la seconde main</label>
+                    </br><br>
+                    <label>
+                        <input type="radio" name="qust" value="Très long"  checked>
+                        <span class="design"></span>
+                        <span class="text">Très souvent  </span>
+                    </label>
+                    </br><br>
+                    <label>
+                        <input type="radio" name="qust"  value="2">
+                        <span class="design"></span>
+                        <span class="text">Souvent</span>
+                    </label>
+                    </br><br>
+                    <label>
+                        <input type="radio" name="qust" value="3">
+                        <span class="design"></span>
+                        <span class="text"> Peu souvent</span>
+                    </label>
+
+                    <br/><br/>
+                </div>
+            </fieldset>
+        </form>
+        <form name="form2">
+            <fieldset>
+                <div class="dropdown">
+                    <legend>Question 2</legend>
+                    <label class="quest"> Le site est il facile d’accès</label>
+                    </br><br>
+                    <label>
+                        <input type="radio" name="qust" value="Très long"  checked>
+                        <span class="design"></span>
+                        <span class="text">Simple </span>
+                    </label>
+                    </br><br>
+                    <label>
+                        <input type="radio" name="qust"  value="2" onClick="q1=10">
+                        <span class="design"></span>
+                        <span class="text">Moyen</span>
+                    </label>
+                    </br><br>
+                    <label>
+                        <input type="radio" name="qust" value="3"  onClick="q1=5">
+                        <span class="design"></span>
+                        <span class="text"> Compliqué</span>
+                    </label>
+                    <br/><br/>
+                </div>
+            </fieldset>
+
+        </form>
+    </div>
+
+</center>
+
+
+<script type="text/javascript">
+
+	    function psuivant(){
+            document.location.href="pageTwo.html"
+        }
+        function precedent(){
+            document.location.href="register.html"
+        }
+
+
+        var prenom = document.getElementById('span1').innerHTML = getCookie('nom');
+        var nom = document.getElementById('span2').innerHTML = getCookie('prenom');
+        var email = document.getElementById('span3').innerHTML = getCookie('email');
+        var role = document.getElementById('span4').innerHTML = getCookie('role');
+
+      
+     function quest1(form1){
+        if (form1.qust[0].checked)
+        {
+        document.cookie= "note1=" + parseInt(5);
+        }else if (form1.qust[1].checked)
+        {
+        document.cookie= "note1=" +parseFloat(4);
+        } else if (form1.qust[2].checked)
+        document.cookie= "note1=" +parseFloat(3);
+        }
+
+    function quest2(form2){
+        if (form2.qust[0].checked)
+        {
+            document.cookie= "note2=" + parseInt(5);
+        }else if (form2.qust[1].checked)
+        {
+            document.cookie= "note2=" +parseFloat(4);
+        } else if (form2.qust[2].checked)
+            document.cookie= "note2=" +parseFloat(3);
+         }
+
+    function moy(){
+        var somme = parseInt (getCookie('note1'));
+        var somme = somme + parseInt (getCookie('note2'));
+        
+        document.cookie ="somme=" +somme;
+        }
+
+</script>
+
+
+        <div class="div_input_fo">
+            <input type="button" name="valid_inscr" class="input_form" value="Suivant" onclick="quest1(form1),quest2(form2),moy(),psuivant()" />
+            </div>
+            <div class="div_input_suiv">
+                <input type="button" name="valid_inscr" class="input_form" value="Précédent" onclick="precedent(),getCookie()" />
+                </div>
+        <br/><br/>
+    </div>
+
+</body>
+</html>

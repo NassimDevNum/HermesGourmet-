@@ -1,0 +1,86 @@
+body {
+    background-color: #EBE6EA;
+    font-family: Arial, sans-serif;
+  }
+  
+  fieldset {
+    background-color: #A79B74;
+    border: 2px solid #731A5C;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    color: #3A3B36;
+  }
+  
+  .legend {
+    font-weight: bold;
+    color: #731A5C;
+  }
+  
+  .quest {
+    color: #3A3B36;
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    margin: 10px;
+  }
+  
+  .design {
+    background-color: #EBE6EA;
+  }
+  
+  .text {
+    color: #3A3B36;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  input[type="radio"] + span.design {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #731A5C;
+    border-radius: 50%;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  
+  input[type="radio"]:checked + span.design {
+    background-color: #731A5C;
+    border: 2px solid #731A5C;
+  }
+  
+  .box {
+    background-color: #A79B74;
+    border: 2px solid #731A5C;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .div_input_fo {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .div_input_suiv {
+    text-align: center;
+  }
+  
+  .input_form {
+    background-color: #731A5C;
+    color: #EBE6EA;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .input_form:hover {
+    background-color: #3A3B36;
+  }
+  

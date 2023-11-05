@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/page.css">
+    <script type="text/javascript" src="js/register.js"></script>
+</head>
+<body>
+
+     <fieldset>
+         Nom : <span id=span1></span> /
+         Prénom : <span id=span2></span> /
+         Email : <span id=span3></span> /
+         Rôle : <span id="span4"></span>
+     </fieldset>
+
+<center>
+    <div class="box">
+        <form name="form1">
+        <fieldset>
+            <div class="information">
+                <legend>Question 3</legend>
+                <label class="quest"> Quelles sont vos motivations pour acheter de la seconde main ? </label></br>
+            </div>
+            <div class="demo2">
+                <input TYPE="CHECKBOX" NAME="check1" VALUE="1">Moins chère
+                <input TYPE="CHECKBOX" NAME="check2" VALUE="2">Eviter la surconsomation
+                <input TYPE="CHECKBOX" NAME="check3" VALUE="3">J'aime l'esprit du vintage
+            </div>
+        </fieldset>
+            <fieldset>
+                <div class="information">
+                    <legend>Question 4</legend>
+                    <label class="quest"> Noter le service client </label></br>
+                </div>
+                <div class="rating">
+                    <input type="radio" value="5" name="chec1" id="rata5" style="display: inline-block;">
+                    <label for="rata5" style="display: inline-block;">5</label>
+                    <input type="radio" value="4" name="chec2" id="rata4" style="display: inline-block;">
+                    <label for="rata4" style="display: inline-block;">4</label>
+                    <input type="radio" value="3" name="chec3" id="rata3" style="display: inline-block;">
+                    <label for="rata3" style="display: inline-block;">3</label>
+                    <input type="radio" value="2" name="chec4" id="rata2" style="display: inline-block;">
+                    <label for="rata2" style="display: inline-block;">2</label>
+                    <input type="radio" value="1" name="chec5" id="rata1" style="display: inline-block;">
+                    <label for="rata1" style="display: inline-block;">1</label>
+                </div>
+            </fieldset>
+
+
+        </form>
+    </div>
+</center>
+
+
+<script type="text/javascript">
+	function psuivant(){
+            document.location.href="pageThree.html"
+        }
+        function precedent(){
+            document.location.href="pageOne.html"
+        }
+    var prenom = document.getElementById('span1').innerHTML = getCookie('nom');
+    var nom = document.getElementById('span2').innerHTML = getCookie('prenom');
+    var email = document.getElementById('span3').innerHTML = getCookie('email');
+    var role = document.getElementById('span4').innerHTML = getCookie('role');
+
+
+function quest3(form1){
+if (form1.check1.checked){
+    document.cookie= "note3=" + parseInt(3);
+}else if(form1.check2.checked){
+    document.cookie= "note3=" + parseInt(4);
+}else if(form1.check3.checked){
+    document.cookie= "note3=" + parseInt(5);
+}
+}
+
+
+function quest4(form1){
+if (form1.chec1.checked){
+    document.cookie= "note4=" + parseInt(5);
+}else if(form1.chec2.checked){
+    document.cookie= "note4=" + parseInt(4);
+}else if(form1.chec3.checked){
+    document.cookie= "note4=" + parseInt(3);
+}else if(form1.chec4.checked) {
+    document.cookie= "note4=" + parseInt(2);
+}else{
+    document.cookie= "note4=" + parseInt(1);
+}}
+
+
+function moy(){
+    var somme = parseInt (getCookie('note3'));
+  var somme = somme + parseInt (getCookie('note4'));
+  var somme = somme + parseInt (getCookie('somme'));
+  document.cookie ="somme=" +somme;
+  }
+
+</script>
+
+    <div class="div_input_fo">
+        <input type="button" name="valid_inscr" class="input_form" value="Suivant" onclick="psuivant(),quest3(form1),quest4(form1),moy()" />
+        </div>
+
+        <div class="div_input_suiv">
+            <input type="button" name="valid_inscr" class="input_form" value="Précédent" onclick="precedent(),getCookie()" />
+            </div>
+    </form>
+
+</body>
+</html>
